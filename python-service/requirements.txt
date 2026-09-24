@@ -1,7 +1,5 @@
 fastapi
-uvicorn[standard]
+uvicorn
 feedparser
-requests
-trafilatura
-pymongo
-python-dotenv
+scikit-learn
+networkx

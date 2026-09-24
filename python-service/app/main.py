@@ -1,18 +1,51 @@
 from fastapi import FastAPI
 
-from app.api.routes.health import router as health_router
-from app.api.routes.ingestion import router as ingestion_router
-from app.core.config import settings
+from news_fetcher import fetch_news
+from clustering import create_clusters
+from naming import get_cluster_name
+
 
 app = FastAPI(
-    title="News Pulse Python Service",
-    version="1.0.0",
+    title="News Clustering API",
+    description="News clustering without AI models",
+    version="1.0",
 )
 
-app.include_router(health_router, prefix="/api")
-app.include_router(ingestion_router, prefix="/api")
+RSS_FEED = "https://feeds.bbci.co.uk/news/rss.xml"
 
 
 @app.get("/")
-def root():
-    return {"service": "news-pulse-python", "status": "ok"}
+def home():
+    return {
+        "message": "News Clustering API is running"
+    }
+
+
+@app.get("/news")
+def get_news():
+    articles = fetch_news(RSS_FEED)
+
+    return {
+        "count": len(articles),
+        "articles": articles,
+    }
+
+
+@app.get("/clusters")
+def get_clusters():
+    articles = fetch_news(RSS_FEED)
+
+    clusters = create_clusters(
+        articles,
+        threshold=0.30,
+    )
+
+    for cluster in clusters:
+        cluster["name"] = get_cluster_name(
+            cluster["articles"]
+        )
+
+    return {
+        "count": len(clusters),
+        "clusters": clusters,
+    }
