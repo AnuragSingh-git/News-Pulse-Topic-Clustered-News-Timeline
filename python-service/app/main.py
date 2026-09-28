@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from news_fetcher import fetch_news
 from clustering import create_clusters

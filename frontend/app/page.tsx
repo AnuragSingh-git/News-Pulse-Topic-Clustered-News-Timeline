@@ -105,7 +105,7 @@ export default function Home() {
       {/* Background decoration */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-violet-300/20 blur-3xl" />
-        <div className="absolute -left-40 top-80 h-[450px] w-[450px] rounded-full bg-blue-300/10 blur-3xl" />
+        <div className="absolute -left-40 top-80 h-112.5 w-[450px] rounded-full bg-blue-300/10 blur-3xl" />
       </div>
 
       <div className="mx-auto w-[calc(100%-32px)] max-w-[1320px] py-6">
