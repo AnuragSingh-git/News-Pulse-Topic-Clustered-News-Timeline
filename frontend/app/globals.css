@@ -1,17 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-* {
-  scrollbar-color: #3A3F4B #14171D;
+@theme inline {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
 
-::selection {
-  background: #E8A33D;
-  color: #14171D;
-}
-
-:focus-visible {
-  outline: 2px solid #5FB8AE;
-  outline-offset: 2px;
+body {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  background: #f5f6fb;
+  color: #171522;
 }
