@@ -24,7 +24,11 @@ app.add_middleware(
 )
 
 
-RSS_FEED = "https://feeds.bbci.co.uk/news/rss.xml"
+RSS_FEEDS = [
+    "https://feeds.bbci.co.uk/news/rss.xml",
+    "https://feeds.skynews.com/feeds/rss/home.xml",
+    "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+]
 
 
 @app.get("/")
@@ -36,8 +40,9 @@ def home():
 
 @app.get("/news")
 def get_news():
-    articles = fetch_news(RSS_FEED)
-
+    articles = []
+    for feed in RSS_FEEDS:
+        articles.extend(fetch_news(feed))
     return {
         "count": len(articles),
         "articles": articles,
@@ -46,11 +51,13 @@ def get_news():
 
 @app.get("/clusters")
 def get_clusters():
-    articles = fetch_news(RSS_FEED)
+    articles = []
+    for feed in RSS_FEEDS:
+        articles.extend(fetch_news(feed))
 
     clusters = create_clusters(
         articles,
-        threshold=0.30,
+        threshold=0.15,
     )
 
     for cluster in clusters:
