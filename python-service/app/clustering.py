@@ -12,7 +12,7 @@ def clean_text(text):
     return text
 
 
-def create_clusters(articles, threshold=0.15):
+def create_clusters(articles, threshold=0.30):
     if not articles:
         return []
 
