@@ -12,14 +12,25 @@ def clean_text(text):
     return text
 
 
-def create_clusters(articles, threshold=0.30):
+def create_clusters(articles, threshold=0.15):
     if not articles:
         return []
 
-    titles = [clean_text(article["title"]) for article in articles]
+    texts = [
+        clean_text(article["title"] + " " + article.get("description", ""))
+        for article in articles
+    ]
 
     vectorizer = TfidfVectorizer(stop_words="english")
-    vectors = vectorizer.fit_transform(titles)
+
+    try:
+        vectors = vectorizer.fit_transform(texts)
+    except ValueError:
+        # No usable vocabulary: return every article as its own cluster
+        return [
+            {"id": i, "articles": [article]}
+            for i, article in enumerate(articles)
+        ]
 
     similarity_matrix = cosine_similarity(vectors)
 
