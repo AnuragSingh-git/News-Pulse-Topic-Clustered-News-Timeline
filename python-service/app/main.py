@@ -15,7 +15,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://news-pulse-topic-clustered-news-tim-ruby.vercel.app/",
+        "https://news-pulse-topic-clustered-news-tim-ruby.vercel.app",
         "http://localhost:3000",
         "http://127.0.0.1:3000",
     ],
