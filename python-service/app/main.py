@@ -8,7 +8,7 @@ from .naming import get_cluster_name
 
 app = FastAPI(
     title="News Clustering API",
-    description="News clustering without AI models",
+    description="News clustering without AI model",
     version="1.0",
 )
 
