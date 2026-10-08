@@ -192,19 +192,19 @@ export default function Home() {
 
       {/* Background */}
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-violet-300/20 blur-3xl" />
+        <div className="absolute -right-40 -top-40 h-130 w-130 rounded-full bg-violet-300/20 blur-3xl" />
 
-        <div className="absolute -left-40 top-[500px] h-[450px] w-[450px] rounded-full bg-blue-300/10 blur-3xl" />
+        <div className="absolute -left-40 top-125 h-112.5 w-112.5 rounded-full bg-blue-300/10 blur-3xl" />
       </div>
 
-      <div className="mx-auto w-[calc(100%-32px)] max-w-[1380px] py-6">
+      <div className="mx-auto w-[calc(100%-32px)] max-w-345 py-6">
 
         {/* NAVBAR */}
         <header className="mb-6 flex items-center justify-between">
 
           <div className="flex items-center gap-3">
 
-            <div className="grid h-11 w-11 place-items-center rounded-[14px] bg-gradient-to-br from-violet-500 to-indigo-700 text-white shadow-lg shadow-violet-500/20">
+            <div className="grid h-11 w-11 place-items-center rounded-[14px] bg-linear-to-br from-violet-500 to-indigo-700 text-white shadow-lg shadow-violet-500/20">
               <Sparkles size={20} />
             </div>
 
@@ -248,7 +248,7 @@ export default function Home() {
         </header>
 
         {/* HERO */}
-        <section className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#18152b] via-[#282348] to-[#51459a] px-7 py-12 text-white shadow-[0_30px_80px_rgba(36,29,67,.22)] sm:px-12 sm:py-14 lg:px-16 lg:py-16">
+        <section className="relative overflow-hidden rounded-4xl bg-linear-to-br from-[#18152b] via-[#282348] to-[#51459a] px-7 py-12 text-white shadow-[0_30px_80px_rgba(36,29,67,.22)] sm:px-12 sm:py-14 lg:px-16 lg:py-16">
 
           <div className="relative z-10 max-w-3xl">
 
@@ -314,7 +314,7 @@ export default function Home() {
               </div>
 
               {largestCluster && (
-                <div className="hidden max-w-[260px] rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3 backdrop-blur sm:block">
+                <div className="hidden max-w-65 rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3 backdrop-blur sm:block">
 
                   <span className="block text-[10px] uppercase tracking-wider text-white/50">
                     Biggest story
@@ -333,11 +333,11 @@ export default function Home() {
 
           {/* Decorative graphic */}
 
-          <div className="absolute right-[-70px] top-1/2 hidden h-[380px] w-[380px] -translate-y-1/2 rounded-full border border-white/10 lg:block">
+          <div className="absolute -right-17.5 top-1/2 hidden h-95 w-95 -translate-y-1/2 rounded-full border border-white/10 lg:block">
 
             <div className="absolute inset-8 rounded-full border border-dashed border-violet-200/10" />
 
-            <div className="absolute left-1/2 top-1/2 grid h-36 w-36 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[38px] border border-white/15 bg-white/[0.08] shadow-2xl backdrop-blur-xl">
+            <div className="absolute left-1/2 top-1/2 grid h-36 w-36 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[38px] border border-white/15 bg-white/8 shadow-2xl backdrop-blur-xl">
 
               <div className="text-center">
 
@@ -452,7 +452,7 @@ export default function Home() {
                     e.target.value
                   )
                 }
-                className="h-11 max-w-full rounded-xl border border-[#e5e4ec] bg-white px-3 text-xs text-[#4f4c5c] shadow-sm outline-none sm:max-w-[220px]"
+                className="h-11 max-w-full rounded-xl border border-[#e5e4ec] bg-white px-3 text-xs text-[#4f4c5c] shadow-sm outline-none sm:max-w-55"
               >
 
                 <option value="all">
