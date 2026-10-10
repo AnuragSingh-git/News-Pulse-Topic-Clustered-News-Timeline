@@ -12,7 +12,7 @@
 - **Story clustering** — similar articles are grouped into a single story
 - **Biggest stories first** — clusters are ranked by how many articles cover them
 - **Dashboard stats** — total stories, number of clusters, articles grouped, last refreshed time
-- **Clean, responsive UI** — built for quick daily briefings
+- **Clean, responsive UI** — built for quick daily briefing
 
 ---
 
@@ -30,7 +30,7 @@ The project has two parts:
 | Part | Responsibility |
 |------|----------------|
 | **frontend/** | Renders the dashboard and the story clusters |
-| **python-service/** | Groups similar articles using classical text-similarity techniques |
+| **python-service/** | Groups similar articles using classical text-similarity technique |
 
 ### How clustering works
 
